@@ -64,8 +64,6 @@ TicketTL* getlast(TicketTL* first) {
     return first;
 }
 
-/*void OLSwap(TicketTL *first, TicketTL *sec){
-}*/
 
 void ListDestroy(TicketTL** head) {
 
@@ -270,7 +268,6 @@ void load(void) {
 
     data = NULL;
 }
-
 
 void save(void) {
 

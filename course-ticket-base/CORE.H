@@ -27,21 +27,6 @@
 //scrolling stuff
 #define LEN 6
 
-enum WINDOWS {
-    MAINPANEL,
-    SEE,
-    FIND,
-    SORT,
-    LISTMENU1,
-    LISTMENU2,
-};
-
-enum MAINPANEL {
-    SEEL,
-    EDIT,
-    HELP,
-};
-
 
 enum STATES {
     APP_START,
@@ -68,11 +53,8 @@ typedef struct item {
 typedef struct element_list {
     const char* label;
     Sizes sizes;
-
     int hover;
-
     int select_item;
-
     item* items;
 
 } element_list;
@@ -83,6 +65,11 @@ typedef struct radio_box {
     int select;
 
 } radio_box;
+
+
+
+
+
 
 
 typedef struct TicketTL {
@@ -96,13 +83,6 @@ typedef struct TicketTL {
 
 } TicketTL;
 
-typedef struct Window {
-
-    int x1;
-    int y1;
-    int x2;
-    int y2;
-} Window;
 
 extern int str_count;
 extern int app_state;
@@ -123,37 +103,26 @@ extern TicketTL* tfirst;
 #define IN 1
 #define OUT 0
 
+// Основная функция
 void interface(void);
-void see(void);
-void create(void);
-void find(void);
-void sort(void);
-void del(TicketTL**);
-void head(void);
-void table(TicketTL*, int);
-void choicetr(TicketTL**);
-void endt(void);
-void closemo(void);
-void chisto(void);
-void diagnos(void);
-void entkey(char*);
 
-void seeDialog(void);
-void createDialog(void);
-void findDialog(void);
-void deleteDialog(void);
-void sortDialog(void);
-void exitDialog(void);
-void helpDialog(char*);
+void deleteOneRecord(TicketTL**);
+void exitApp(void);
+
+
+void showCreateDialog(void);
+void showDeleteDialog(void); 
+void showSortDialog(void);
+
+void findDialog(void); // todo
+void helpDialog(char*); //todo
 
 void twoButtonDialog(int, int, int, int, char*, char*, char*);
-void oneButtonDialog(int, int, int, int, char*, char*);
-void mainPanel(size_t, char*, ...);
-void listMenu(int, int, size_t, char*, ...);
 
-void headConsole(void);
-void tableConsole(TicketTL*);
-void endConsole(void);
+void showTable(void);
+void tableHead(void);
+void tableElement(TicketTL*);
+void tableBottom(void);
 
 //this guy tried to pass Suslov...
 
