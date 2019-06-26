@@ -43,33 +43,12 @@ typedef struct Sizes {
 } Sizes;
 
 
-typedef struct item {
-    const char* label;
-    Sizes sizes;
-
-    int hover;
-} item;
-
-typedef struct element_list {
-    const char* label;
-    Sizes sizes;
-    int hover;
-    int select_item;
-    item* items;
-
-} element_list;
-
 typedef struct radio_box {
 
     Sizes sizes;
     int select;
 
 } radio_box;
-
-
-
-
-
 
 
 typedef struct TicketTL {
@@ -86,6 +65,7 @@ typedef struct TicketTL {
 
 extern int str_count;
 extern int app_state;
+extern int prev_app_state;
 extern TicketTL* tfirst;
 
 #ifdef MAIN
@@ -126,11 +106,11 @@ void tableBottom(void);
 
 //this guy tried to pass Suslov...
 
-void render_main_panel(element_list** lists, size_t count);
 
 int windofch = WINDOFF;
 int str_count = 0;
 int app_state = APP_START;
+int prev_app_state = APP_START;
 
 #endif
 

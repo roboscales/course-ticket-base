@@ -4,9 +4,10 @@
 
 #include "dialog.h"
 #include "table.h"
+
 #include "other.h"
 
-#include "panel.h"
+#include "main_panel.h"
 
 //first go
 
@@ -28,9 +29,6 @@
     lists[_index]->items[_item_num].sizes.height = _height; \
     lists[_index]->items[_item_num].hover = _hover;
 
-
-
-;
 
 
 void radioBoxRender(radio_box** boxes, size_t count) {
@@ -92,7 +90,6 @@ void interface(void) {
     element_list** lists;
     item** items;
     int count_items[4];
-    int running = 1;
 
     clrscr();
 
@@ -153,84 +150,39 @@ void interface(void) {
 
 
 
-    // key = getch();
-    // while(running){
-    //     switch (app_state) {
+    key = getch();
+    switch (app_state) {
+    case APP_START: {
 
-    //     case APP_START: {
+        // while (1) {
 
-    //         while (key != 27) {
-                
-    //             switch (key) {
+        //     switch (key) {
 
-    //             case 68: {
-    //                 prev_app_state = app_state;
-    //                 app_state = ACTIVE_TOOLBAR;
+        //     case 121: {
+        //         printf("ddddddddddddddddd");
+        //         break;
+        //     }
 
-    //                 cprintf("sss");
+        //     }
 
-    //                 key = 27;
-    //                 break;
-    //             }
+        // }
 
-    //             }
-    //             if (app_state != ACTIVE_TOOLBAR)
-    //                 key = getch();
-    //         }
+        break;
+    }
 
-            
-    //         break;
-    //     }
+    case ACTIVE_TOOLBAR: {
 
-    //     case ACTIVE_TOOLBAR: {
-           
-    //         while (key != 27) {
-                
-    //             switch (key) {
-                    
-    //             case RIGHT: {
-    //                 cprintf("right");
-    //                 if (++now_list == count || now_list == -1)
-    //                     now_list = 0;
+        break;
+    }
 
-    //                 for (i = 0; i < count; i++)
-    //                     lists[i]->hover = 0;
+    case ACTIVE_ITEM_TOOLBAR: {
 
-    //                 lists[now_list]->hover = 1;
-    //                 render_main_panel(lists, count);
-    //                 break;
-    //             }
+        break;
+    }
 
-    //             case LEFT: {
-    //                 if (now_list == -1)
-    //                     now_list = 0;
-    //                 else if (--now_list < 0)
-    //                     now_list = count - 1;
+    }
 
-    //                 for (i = 0; i < count; i++)
-    //                     lists[i]->hover = 0;
 
-    //                 lists[now_list]->hover = 1;
-    //                 render_main_panel(lists, count);
-
-    //             break;
-    //             }
-                
-    //             }
-    //         }
-        
-    //         app_state = prev_app_state;
-    //         break;
-    //     }
-
-    //     case ACTIVE_ITEM_TOOLBAR: {
-
-    //         break;
-    //     }
-
-    //     }
-
-    // }
 
 
     key = getch();
