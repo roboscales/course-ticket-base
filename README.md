@@ -1,2 +1,2 @@
 # course-ticket-base
-Simple pure C project with Borland C++ 3.1
+Simple pure C project with Borland C++ 3.1 via. SusLove
